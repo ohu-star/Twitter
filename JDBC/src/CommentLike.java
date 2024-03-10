@@ -42,7 +42,7 @@ private JPanel panel;
 		appbar.setPreferredSize(new Dimension(464,65));
 		appbar.setLayout(null);
 		panel.add(appbar);
-		ImageIcon logo = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 50,50);
+		ImageIcon logo = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 50,50);
 		
 		JLabel Logo = new JLabel(logo);
 		Logo.addMouseListener(new MouseAdapter() {

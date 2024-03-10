@@ -10,8 +10,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class SQLMethods {	
-	//Connection 占쌨댐옙 占쌉쇽옙(SQLMethods占쏙옙 占쌉쇽옙占쏙옙 占쏙옙載� Connection 占쏙옙占쌘곤옙占쏙옙 占쏙옙占�)
-	//MYSQL占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占쏙옙 connection占쏙옙체占쏙옙 占쏙옙환占싼댐옙.
 	public static Connection con;
 	
 	public static void init() {
@@ -20,8 +18,7 @@ public class SQLMethods {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost/twitter";
-            //paswd占싸븝옙 占쏙옙占싸븝옙占쏙옙 占쏙옙占쏙옙 占십울옙
-            String user = "root", passwd = "dong1084@";
+            String user = "root", passwd = "yourPassword";
             connection = DriverManager.getConnection(url, user, passwd);
         }catch (ClassNotFoundException e){
             e.printStackTrace();
@@ -66,15 +63,11 @@ public class SQLMethods {
 	public static User[] GetUsers(Connection connection){
         Statement stmt = null;
         ResultSet rs = null;
-        
         List<User> list = new ArrayList<User>();
         try{
             stmt = connection.createStatement();
             String sql = "Select * from user";
             rs = stmt.executeQuery(sql);
-
-            
-           
             while(rs.next())
             {
                 String id = rs.getString(1);
@@ -82,11 +75,9 @@ public class SQLMethods {
                 list.add(u);
             }
         }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
+        catch (SQLException e){ 
+        	e.printStackTrace();
         }
-
         return list.toArray(new User[0]);
     }
 	
@@ -94,52 +85,42 @@ public class SQLMethods {
     public static String Login(Connection con, String id, String pwd) {
         Statement stmt = null;
         ResultSet rs = null;
-
         try {
-        	String q1 = "select * from user where user_id = \"" + id + "\" and pwd = \"" + pwd + "\"";
-
+        	String q1 = "select * from user where user_id = \"" + id + 
+        			"\" and pwd = \"" + pwd + "\"";
         	stmt = con.createStatement();
         	rs = stmt.executeQuery(q1);
         	if(rs.next()){
         		System.out.println("Logged in!");
-        		return rs.getString(1);
-        		}
-        	else {
+        		return rs.getString(1); }
+        	else
         		new CustomDialog("Login Failed!", "Wrong ID/Password!");
-        		}
-        
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return "";
     }
     
     // return 1 : Sign in Success
     // return 0 : ID already exists
     // return -1 : error
-    public static int Signin(Connection connection, String id, String pwd, String name, String email) {
+    public static int Signin(Connection connection, String id, 
+    		String pwd, String name, String email) {
         Statement stmt = null;
         ResultSet rs = null;
-
         try {
-
-
                 String q1 = "select user_id from user where user_id = \"" + id + "\"";
                 stmt = connection.createStatement();
                 rs = stmt.executeQuery(q1);
-
                 if(rs.next())
                     return 0;
-
-                q1 = "insert into user values(\"" + id + "\", \"" + pwd + "\", \"" + name+ "\", \"\", \"" + email+"\", \"\", \"\");";
+                q1 = "insert into user values(\"" + id + "\", \"" 
+                + pwd + "\", \"" + name+ "\", \"\", \"" + email+"\", \"\", \"\");";
                 stmt.executeUpdate(q1);
                 return 1;
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return - 1;
     }
     
@@ -148,7 +129,7 @@ public class SQLMethods {
     	List<Post> list = new ArrayList<Post>();
     	List<String> taggedList = new ArrayList<String>();    
     	
-    	String q1 = "select posts_id from hashtag where user_user_id = \"" + user_id +"\";";
+    	String q1 = "select post_id from mention where user_id = \"" + user_id +"\";";
     	ResultSet rs = SQLMethods.ExecuteQuery(con, q1);
     	
     	try {
@@ -272,71 +253,52 @@ public class SQLMethods {
    
     
     
-    public static void WritePost(Connection connection, String user_id, String content, String[] imgs, String[] tags)
+    public static void WritePost(Connection connection, 
+    		String user_id, String content, String[] imgs, String[] tags)
     {
         Statement stmt = null;
         ResultSet rs = null;
-
         try{
             stmt = connection.createStatement();
-            String q1 = "select count(user_id) from posts where user_id = \"" + user_id + "\";";
+            String q1 = "select count(user_id) from posts where user_id = \""
+            		+ user_id + "\";";
             rs = stmt.executeQuery(q1);
-            if(!rs.next())
-                return;
-
+            if(!rs.next()) return;
             String temp =  rs.getString(1);
-
             Date date = new Date();
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-            
-
-            q1 = "insert into posts values(null, \"" + content + "\", \"" + user_id + "\", Date(\"" +sqlDate+"\"));";
+            q1 = "insert into posts values(null, \""
+            		+ content + "\", \"" + user_id + "\", Date(\"" +sqlDate+"\"));";
             stmt.executeUpdate(q1);
-
             int imgCount = imgs.length;
-
             if(imgCount > 0)
             {
                 int cnt = 0;
                 while(true){
-                	if(cnt == imgCount)
-                		break;
+                	if(cnt == imgCount) break;
                     String imDir = imgs[cnt];
-
-                    if(imDir.compareTo("") == 0)
-                        break;
-                    
+                    if(imDir.compareTo("") == 0) break;
                     String q2 = "select MAX(post_id) from posts";
                     ResultSet rs2 = stmt.executeQuery(q2);
                     int id = 0;
-                    if(rs2.next())
-                    	id = rs2.getInt(1);
-                    
+                    if(rs2.next()) id = rs2.getInt(1);
                     q2 = "insert into images values(null, \"" + imDir + "\", \"" + id + "\");";
                     stmt.executeUpdate(q2);
                     cnt++;
                 }
             }
-            
             int tagCount = tags.length;
-            
             if(tagCount > 0) {
             	while(tagCount > 0) {
             		tagCount--;
             		String q2 = "select MAX(post_id) from posts";
                     ResultSet rs2 = stmt.executeQuery(q2);
                     int id = 0;
-                    if(rs2.next())
-                    	id = rs2.getInt(1);
-                    
+                    if(rs2.next()) id = rs2.getInt(1);
                     q2 = "insert into hashtag values(\"" + id + "\", \"" + tags[tagCount]+ "\");";
                     stmt.executeUpdate(q2);
-                                       
             	}
-            	
-            	
             }
-            
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -350,57 +312,47 @@ public class SQLMethods {
     {
         Statement stmt = null;
         ResultSet rs = null;
-        
         String q1 = "select user_id from user where user_id = \"" + follow_id + "\";";
-
         try {
             stmt = connection.createStatement();
             rs = stmt.executeQuery(q1);
-
-            if(rs.next())
-            {
-                String q2 = "select user_id from follow where user_id = \"" + follow_id+ "\" and follower_id = \"" + user_id + "\";";
+            if(rs.next()) {
+                String q2 = "select user_id from follow where user_id = \""
+                		+ follow_id+ "\" and follower_id = \"" + user_id + "\";";
                 ResultSet rs2 = stmt.executeQuery(q2);
-                if(rs2.next())
-                {
-                    String q4 = "delete from follow where user_id = \"" + follow_id + "\" and follower_id = \""+user_id+"\";";
+                if(rs2.next()) {
+                    String q4 = "delete from follow where user_id = \"" 
+                    		+ follow_id + "\" and follower_id = \""+user_id+"\";";
                     stmt.executeUpdate(q4);
                     return 0;
                 }
-                else{
-                String q3 = "insert into follow values(\"" + follow_id + "\", \"" + user_id + "\");";
-                stmt.executeUpdate(q3);
-                return 1;
+                else {
+	                String q3 = "insert into follow values(\"" 
+	                		+ follow_id + "\", \"" + user_id + "\");";
+	                stmt.executeUpdate(q3);
+	                return 1;
                 }
             }
                 return 2;
-            
         }
         catch (SQLException e){
             e.printStackTrace();
         }
-        
         return -1;
-
     }
     
     public static List<String> Followers(Connection connection, String user_id)
     {
         Statement stmt = null;
-        String q1 = "select follower_id from follow where user_id = \"" + user_id + "\";";
-        
+        String q1 = "select follower_id from follow where user_id = \""+ user_id + "\";";
         List<String> result = new ArrayList<String >();
-
         try {
             stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(q1);
-            while (rs.next())
-                result.add(rs.getString(1));
-        }
-        catch (SQLException e){
+            while (rs.next()) result.add(rs.getString(1));
+        }catch (SQLException e){
             e.printStackTrace();
         }
-
         return result;
     }
     
@@ -408,19 +360,14 @@ public class SQLMethods {
     {
         Statement stmt = null;
         String q1 = "select user_id from follow where follower_id = \"" + user_id + "\";";
-        
         List<String> result = new ArrayList<String >();
-
         try {
             stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(q1);
-            while (rs.next())
-                result.add(rs.getString(1));
-        }
-        catch (SQLException e){
+            while (rs.next()) result.add(rs.getString(1));
+        }catch (SQLException e){
             e.printStackTrace();
         }
-
         return result;
     }
 
@@ -497,7 +444,8 @@ public class SQLMethods {
     //return 0 cannot write comment
     //return 1 success write
     //return -1 error
-    public static int WriteComment(Connection connection, String user_id, String post_id, String content)
+    public static int WriteComment(Connection connection,
+    		String user_id, String post_id, String content)
     {
         Statement stmt = null;
         ResultSet rs = null;
@@ -532,7 +480,8 @@ public class SQLMethods {
         }
     }
     
-    public static int WriteChildComment(Connection connection, String user_id, String parent_id, String content)
+    public static int WriteChildComment(Connection connection,
+    		String user_id, String parent_id, String content)
     {
         Statement stmt = null;
         ResultSet rs = null;

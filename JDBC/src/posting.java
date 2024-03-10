@@ -61,7 +61,7 @@ public class posting extends JFrame {
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		contentPane.add(scrollPane);
 		
-		ImageIcon back = ImageManager.GetImageUsingFileSystem("src/assets/UI/back.png",25,25);
+		ImageIcon back = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/back.png",25,25);
 		JLabel backBtn = new JLabel(back);
 		backBtn.setBounds(12, 9, 25, 25);
 		backBtn.setBackground(new Color(255, 255,255));
@@ -95,7 +95,7 @@ public class posting extends JFrame {
 		imurl.setColumns(10);
 		
 		
-		ImageIcon addImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/image_button.png",81,32);
+		ImageIcon addImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/image_button.png",81,32);
 		JButton btnadd = new JButton(addImage);
 		btnadd.setBounds(371, 382, 81, 32);
 		btnadd.setContentAreaFilled(false);
@@ -107,7 +107,7 @@ public class posting extends JFrame {
 		contentPane.add(hashTextField);
 		hashTextField.setColumns(10);
 		
-		ImageIcon tagImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/tag.png",81,32);
+		ImageIcon tagImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/tag.png",81,32);
 		Set<String> tags = new HashSet<String>();
 		JButton hashTagBtn = new JButton(tagImage);
 		hashTagBtn.setContentAreaFilled(false);
@@ -159,7 +159,7 @@ public class posting extends JFrame {
 		    
 		});
 		
-		ImageIcon twit = ImageManager.GetImageUsingFileSystem("src/assets/UI/twit.png",81,32);
+		ImageIcon twit = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/twit.png",81,32);
 		JButton btnpost = new JButton(twit);
 		btnpost.setBounds(375, 5, 81, 32);
 		btnpost.setContentAreaFilled(false);
@@ -171,7 +171,7 @@ public class posting extends JFrame {
 		profileIcon.setBounds(10, 45, 50, 50);
 		contentPane.add(profileIcon);
 		
-		ImageIcon iIcon = ImageManager.GetImageUsingFileSystem("src/assets/UI/image.png", 35, 35);
+		ImageIcon iIcon = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/image.png", 35, 35);
 		JLabel imageIcon = new JLabel(iIcon);
 		imageIcon.setBounds(15, 209, 35, 35);
 		contentPane.add(imageIcon);

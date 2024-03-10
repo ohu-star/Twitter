@@ -120,11 +120,11 @@ public class CommentPanel extends JPanel {
 		String imgURL ="";
 		try {
 			if(rs.next()) {
-				imgURL = "src/assets/UI/fullHeart.png";
+				imgURL = "JDBC/src/assets/UI/fullHeart.png";
 				
 			}
 			else {
-				imgURL = "src/assets/UI/emptyHeart.png";
+				imgURL = "JDBC/src/assets/UI/emptyHeart.png";
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -151,12 +151,12 @@ public class CommentPanel extends JPanel {
 				int like=SQLMethods.CommentLike(SQLMethods.GetCon(), ClientInformation.Logined_id , comment.comment_id);
 				System.out.println(like);
 				if(like==1) {
-					heartURL = "src/assets/UI/fullHeart.png";
+					heartURL = "JDBC/src/assets/UI/fullHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt1=cnt1+1;
 				}
 				else if(like==0) {
-					heartURL = "src/assets/UI/emptyHeart.png";
+					heartURL = "JDBC/src/assets/UI/emptyHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt1=cnt1-1;
 				}

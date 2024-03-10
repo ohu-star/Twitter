@@ -37,9 +37,9 @@ public class Login extends JFrame {
 		ImageIcon logoText = null;
 
 		
-		logoImage = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 100, 100);
+		logoImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 100, 100);
 	
-		logoText = ImageManager.GetImageUsingFileSystem("src/assets/UI/text_logo.png", 174, 39);
+		logoText = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/text_logo.png", 174, 39);
 		
 		JLabel Logo = new JLabel(logoImage);
 		Logo.setBackground(new Color(133, 251, 254));
@@ -47,14 +47,14 @@ public class Login extends JFrame {
 		contentPane.add(Logo);
 		
 		IDInput = new JTextField();
-		IDInput.setBackground(new Color(236, 236, 236));
+		IDInput.setBackground(new Color(255, 255, 255));
 		IDInput.setBounds(65, 233, 206, 38);
 		contentPane.add(IDInput);
 		IDInput.setColumns(10);
 		
 		PWInput = new JPasswordField();
 		PWInput.setEchoChar('*');
-		PWInput.setBackground(new Color(236, 236, 236));
+		PWInput.setBackground(new Color(255, 255, 255));
 		PWInput.setColumns(10);
 		PWInput.setBounds(65, 281, 206, 38);
 		contentPane.add(PWInput);
@@ -64,7 +64,7 @@ public class Login extends JFrame {
 		contentPane.add(TwitterTextLogo);
 		
 		JLabel IDText = new JLabel("ID:");
-		IDText.setFont(new Font("Arial", Font.PLAIN, 18));
+		IDText.setFont(new Font("", Font.PLAIN, 18));
 		IDText.setBounds(12, 233, 57, 38);
 		contentPane.add(IDText);
 		
@@ -73,7 +73,7 @@ public class Login extends JFrame {
 		PasswordText.setBounds(12, 281, 57, 38);
 		contentPane.add(PasswordText);
 		
-		ImageIcon LoginImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/login.png",190,36);
+		ImageIcon LoginImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/login.png",190,36);
 		JButton LoginBtn = new JButton(LoginImage);
 		LoginBtn.setContentAreaFilled(false);
 		LoginBtn.setOpaque(false);
@@ -100,7 +100,7 @@ public class Login extends JFrame {
 		LoginBtn.setBounds(50, 349, 190, 36);
 		contentPane.add(LoginBtn);
 		
-		ImageIcon signinImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/sign_up.png",190,36);
+		ImageIcon signinImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/sign_up.png",190,36);
 		JButton RegisterBtn = new JButton(signinImage);
 		RegisterBtn.setContentAreaFilled(false);
 		RegisterBtn.setOpaque(false);

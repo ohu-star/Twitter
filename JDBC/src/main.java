@@ -9,7 +9,7 @@ public class main {
     public static void main(String[] args)
     {
     	SQLMethods.init();
-    	ClientInformation.Logined_id = "hihi";
+    	//ClientInformation.Logined_id = "hihi";
  
     	//new UserSearch();
     	//new posting("hi");
@@ -17,6 +17,7 @@ public class main {
     	//new MainFeed();
     	//new Setting("hi");
     	//new Profile("hi");
+    	//new ViewPost("1");
     }
 
     

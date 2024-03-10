@@ -56,7 +56,7 @@ public class Profile extends JFrame {
 		appbar.setLayout(null);
 		panel.add(appbar);
 		
-		ImageIcon logo = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 50,50);
+		ImageIcon logo = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 50,50);
 		
 		JLabel Logo = new JLabel(logo);
 		Logo.addMouseListener(new MouseAdapter() {
@@ -119,7 +119,7 @@ public class Profile extends JFrame {
 		//appbar.add(UserBtn);
 		
 		if(id.equals(ClientInformation.Logined_id)) {
-			ImageIcon settingIcon = ImageManager.GetImageUsingFileSystem("src/assets/UI/setting2.png",30,30);
+			ImageIcon settingIcon = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/setting2.png",30,30);
 			JLabel settingBtn = new JLabel(settingIcon);
 			settingBtn.setBounds(402, 5, 50, 50);
 			//SearchBtn.setBackground(new Color(255, 255,255));
@@ -286,8 +286,8 @@ public class Profile extends JFrame {
 		*/
 		
 		//팔로우 버튼
-		ImageIcon followImg = ImageManager.GetImageUsingFileSystem("src/assets/UI/follow_en.png",116,32);
-		ImageIcon followingImg = ImageManager.GetImageUsingFileSystem("src/assets/UI/following.png",116,32);
+		ImageIcon followImg = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/follow_en.png",116,32);
+		ImageIcon followingImg = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/following.png",116,32);
 		
 		JLabel followButton = new JLabel(followImg);
 		JLabel followingButton = new JLabel(followingImg);
@@ -400,7 +400,7 @@ public class Profile extends JFrame {
 		btnPanel.setSize(50, 50);
 		btnPanel.setLayout(null);
 		
-		ImageIcon plusImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/plus.png", 50, 50);
+		ImageIcon plusImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/plus.png", 50, 50);
 		JLabel writeBtn = new JLabel(plusImage);
 		writeBtn.setBounds(0, 0, 50, 50);
 		writeBtn.setBackground(new Color(255, 255,255));

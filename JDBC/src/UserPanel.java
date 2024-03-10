@@ -84,19 +84,19 @@ public class UserPanel extends JPanel {
 		String q1 = "select user_id from follow where follower_id = \"" + ClientInformation.Logined_id + "\" and user_id = \"" + user.user_id + "\";";
 		ResultSet rs = SQLMethods.ExecuteQuery(SQLMethods.GetCon(), q1);
 		
-		String followUrl = "src/assets/UI/follow_en.png";
+		String followUrl = "JDBC/src/assets/UI/follow_en.png";
 		try {
 			if(rs.next()) {
 				if(rs.getString(1).compareTo("") == 0) {
-					followUrl = "src/assets/UI/follow_en.png";
+					followUrl = "JDBC/src/assets/UI/follow_en.png";
 				}
 				else {
-					followUrl = "src/assets/UI/following.png";
+					followUrl = "JDBC/src/assets/UI/following.png";
 				}
 							
 			}
 			else
-				followUrl = "src/assets/UI/follow_en.png";
+				followUrl = "JDBC/src/assets/UI/follow_en.png";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,19 +120,19 @@ public class UserPanel extends JPanel {
 				String q1 = "select user_id from follow where follower_id = \"" + ClientInformation.Logined_id + "\" and user_id = \"" + user.user_id + "\";";
 				ResultSet rs = SQLMethods.ExecuteQuery(SQLMethods.GetCon(), q1);
 				
-				String imgUrl = "src/assets/UI/followIcon.png";
+				String imgUrl = "JDBC/src/assets/UI/followIcon.png";
 				try {
 					if(rs.next()) {
 						if(rs.getString(1).compareTo("") == 0) {
-							imgUrl = "src/assets/UI/follow_en.png";
+							imgUrl = "JDBC/src/assets/UI/follow_en.png";
 						}
 						else {
-							imgUrl = "src/assets/UI/following.png";
+							imgUrl = "JDBC/src/assets/UI/following.png";
 						}
 									
 					}
 					else
-						imgUrl = "src/assets/UI/follow_en.png";
+						imgUrl = "JDBC/src/assets/UI/follow_en.png";
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

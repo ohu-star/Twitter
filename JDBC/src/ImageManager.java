@@ -60,13 +60,13 @@ public class ImageManager {
 		try {
 			if(rs.next()) {
 				if(rs.getString(1).compareTo("") == 0)
-					result = ImageManager.GetImageUsingFileSystem("src/assets/userImages/user.png", w, h);
+					result = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/userImages/user.png", w, h);
 				else
 					result = ImageManager.GetImageUsingURL(rs.getString(1), w, h);			
 				
 			}
 			else {
-				result = ImageManager.GetImageUsingFileSystem("src/assets/userImages/user.png", w, h);
+				result = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/userImages/user.png", w, h);
 				
 			}
 			
@@ -86,13 +86,13 @@ public class ImageManager {
 		try {
 			if(rs.next()) {
 				if(rs.getString(1).compareTo("") == 0)
-					result = ImageManager.GetImageUsingFileSystem("src/assets/cloud.jpg", w, h);
+					result = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/cloud.jpg", w, h);
 				else
 					result = ImageManager.GetImageUsingURL(rs.getString(1), w, h);			
 				
 			}
 			else {
-				result = ImageManager.GetImageUsingFileSystem("src/assets/cloud.jpg", w, h);
+				result = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/cloud.jpg", w, h);
 				
 			}
 			

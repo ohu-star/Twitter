@@ -37,7 +37,7 @@ public class Signin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		ImageIcon logoImage = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 100, 100);
+		ImageIcon logoImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 100, 100);
 		JLabel Logo = new JLabel(logoImage);
 		Logo.setBackground(new Color(133, 251, 254));
 		Logo.setBounds(92, 32, 100, 100);
@@ -84,7 +84,7 @@ public class Signin extends JFrame {
 		lblEmail.setBounds(12, 304, 55, 19);
 		contentPane.add(lblEmail);
 		
-		ImageIcon signinImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/sign_up.png",190,36);
+		ImageIcon signinImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/sign_up.png",190,36);
 		JButton SigninBtn = new JButton(signinImage);
 		SigninBtn.setBounds(45, 383, 190, 36);
 		SigninBtn.setContentAreaFilled(false);

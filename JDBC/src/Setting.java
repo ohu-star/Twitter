@@ -77,7 +77,7 @@ public class Setting extends JFrame {
 		txtrEditProfile.setBounds(50, 136, 212, 31);
 		panel.add(txtrEditProfile);
 		
-		JButton btnNewButton = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/change_nickname.png",305, 58));
+		JButton btnNewButton = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/change_nickname.png",305, 58));
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setFocusPainted(false);
@@ -97,7 +97,7 @@ public class Setting extends JFrame {
 		btnNewButton.setBounds(0, 187, 447, 53);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/change_email.png",305, 58));
+		JButton btnNewButton_1 = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/change_email.png",305, 58));
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
 		btnNewButton_1.setBorderPainted(false);
 		btnNewButton_1.setFocusPainted(false);
@@ -124,7 +124,7 @@ public class Setting extends JFrame {
 		txtrCheakProfile.setBounds(50, 561, 212, 31);
 		panel.add(txtrCheakProfile);
 		
-		JButton btnNewButton_2 = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/my_profile_center.png",305, 58));
+		JButton btnNewButton_2 = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/my_profile_center.png",305, 58));
 		btnNewButton_2.setBackground(new Color(255, 255, 255));
 		btnNewButton_2.setBorderPainted(false);
 		btnNewButton_2.setFocusPainted(false);
@@ -145,7 +145,7 @@ public class Setting extends JFrame {
 			}
 		});
 		
-		ImageIcon img = ImageManager.GetImageUsingFileSystem("src/assets/UI/back.png", 50, 50);
+		ImageIcon img = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/back.png", 50, 50);
 		
 		JButton btnNewButton_3_1 = new JButton(img);
 		btnNewButton_3_1.setBounds(340, -20, 150, 150);
@@ -163,7 +163,7 @@ public class Setting extends JFrame {
 		panel.add(btnNewButton_3_1);
 		
 		//이미지 바꾸기
-		JButton btnChangeImage = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/change_image.png",305, 58));
+		JButton btnChangeImage = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/change_image.png",305, 58));
 		btnChangeImage.setBorderPainted(false);
 		btnChangeImage.setFocusPainted(false);
 		btnChangeImage.setOpaque(false);
@@ -184,7 +184,7 @@ public class Setting extends JFrame {
 		panel.add(btnChangeImage);
 		
 		//비밀번호 바꾸기
-		JButton btnChangePassword = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/change_password.png",305, 58));
+		JButton btnChangePassword = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/change_password.png",305, 58));
 		btnChangePassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setBounds(0, 0, 478, 505);
@@ -204,7 +204,7 @@ public class Setting extends JFrame {
 		panel.add(btnChangePassword);
 		
 		//
-		JButton btnChangeMessage = new JButton(ImageManager.GetImageUsingFileSystem("src/assets/UI/change_intro.png",305, 58));
+		JButton btnChangeMessage = new JButton(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/change_intro.png",305, 58));
 		btnChangeMessage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setBounds(0, 0, 478, 505);

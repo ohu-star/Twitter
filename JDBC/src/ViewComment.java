@@ -60,7 +60,7 @@ public class ViewComment extends JFrame {
 		top.add(appbar);
 	
 		
-		ImageIcon logo = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 50,50);
+		ImageIcon logo = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 50,50);
 		
 		JLabel Logo = new JLabel(logo);
 		Logo.addMouseListener(new MouseAdapter() {
@@ -106,7 +106,7 @@ public class ViewComment extends JFrame {
 		
 		appbar.add(UserBtn);
 		
-		ImageIcon searchIcon = ImageManager.GetImageUsingFileSystem("src/assets/UI/search.png",30,30);
+		ImageIcon searchIcon = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/search.png",30,30);
 		JLabel SearchBtn = new JLabel(searchIcon);
 		SearchBtn.setBounds(402, 5, 50, 50);
 		SearchBtn.setBackground(new Color(255, 255,255));
@@ -158,7 +158,7 @@ public class ViewComment extends JFrame {
 		panel.add(commentText);
 		
 		
-		ImageIcon enter = ImageManager.GetImageUsingFileSystem("src/assets/UI/enter button.png",82,32);
+		ImageIcon enter = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/enter button.png",82,32);
 		JButton enterBtn = new JButton(enter);
 		enterBtn.setBounds(391, 10, 61, 48);
 		enterBtn.setBorderPainted(false);

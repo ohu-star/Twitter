@@ -123,12 +123,12 @@ public class ChildCommentPanel extends JPanel {
 				int like=SQLMethods.ChildCommentLike(SQLMethods.GetCon(), ClientInformation.Logined_id , comment.comment_id);
 				System.out.println(like);
 				if(like==1) {
-					heartURL = "src/assets/UI/fullHeart.png";
+					heartURL = "JDBC/src/assets/UI/fullHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt1=cnt1+1;
 				}
 				else if(like==0) {
-					heartURL = "src/assets/UI/emptyHeart.png";
+					heartURL = "JDBC/src/assets/UI/emptyHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt1=cnt1-1;
 				}

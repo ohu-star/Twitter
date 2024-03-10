@@ -31,7 +31,6 @@ import java.io.Serializable;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Image;
-import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
 public class PostPanel extends JPanel{
@@ -161,13 +160,13 @@ public class PostPanel extends JPanel{
 		try {
 			if(rs.next()) {
 				if(rs.getString(1).compareTo("") == 0)
-					imgURL = "src/assets/UI/emptyHeart.png";
+					imgURL = "JDBC/src/assets/UI/emptyHeart.png";
 				else
-					imgURL = "src/assets/UI/fullHeart.png";
+					imgURL = "JDBC/src/assets/UI/fullHeart.png";
 				
 			}
 			else {
-				imgURL = "src/assets/UI/emptyHeart.png";
+				imgURL = "JDBC/src/assets/UI/emptyHeart.png";
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -214,12 +213,12 @@ public class PostPanel extends JPanel{
 				int like=SQLMethods.PostLike(SQLMethods.GetCon(), ClientInformation.Logined_id, post.post_id);
 				System.out.println(like);
 				if(like==1) {
-					heartURL = "src/assets/UI/fullHeart.png";
+					heartURL = "JDBC/src/assets/UI/fullHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt=cnt+1;
 				}
 				else if(like==0) {
-					heartURL = "src/assets/UI/emptyHeart.png";
+					heartURL = "JDBC/src/assets/UI/emptyHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt=cnt-1;
 				}
@@ -337,13 +336,13 @@ public class PostPanel extends JPanel{
 		try {
 			if(rs.next()) {
 				if(rs.getString(1).compareTo("") == 0)
-					imgURL = "src/assets/UI/emptyHeart.png";
+					imgURL = "JDBC/src/assets/UI/emptyHeart.png";
 				else
-					imgURL = "src/assets/UI/fullHeart.png";
+					imgURL = "JDBC/src/assets/UI/fullHeart.png";
 				
 			}
 			else {
-				imgURL = "src/assets/UI/emptyHeart.png";
+				imgURL = "JDBC/src/assets/UI/emptyHeart.png";
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -367,7 +366,6 @@ public class PostPanel extends JPanel{
 		scroll.setViewportView(text);
 		
 		JScrollPane imageScroll = new JScrollPane();
-		imageScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 		imageScroll.setBounds(12, 175, 428, 115);
 		panel.add(imageScroll);
 
@@ -410,12 +408,12 @@ public class PostPanel extends JPanel{
 				int like=SQLMethods.PostLike(SQLMethods.GetCon(), ClientInformation.Logined_id, post.post_id);
 				System.out.println(like);
 				if(like==1) {
-					heartURL = "src/assets/UI/fullHeart.png";
+					heartURL = "JDBC/src/assets/UI/fullHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt=cnt+1;
 				}
 				else if(like==0) {
-					heartURL = "src/assets/UI/emptyHeart.png";
+					heartURL = "JDBC/src/assets/UI/emptyHeart.png";
 					likeImage_1 = ImageManager.GetImageUsingFileSystem(heartURL, 20, 20);
 					cnt=cnt-1;
 				}

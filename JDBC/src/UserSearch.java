@@ -47,7 +47,7 @@ public class UserSearch extends JFrame {
 		panel_2.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 10));
 		
 		
-		JLabel icon = new JLabel(ImageManager.GetImageUsingFileSystem("src/assets/UI/search_2.png",10,10));
+		JLabel icon = new JLabel(ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/search_2.png",10,10));
 		icon.setPreferredSize(new Dimension(40, 40));
 		panel_2.add(icon);
 		
@@ -56,7 +56,7 @@ public class UserSearch extends JFrame {
 		textField.setPreferredSize(new Dimension(274, 40));
 		panel_2.add(textField);
 		
-		ImageIcon enterImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/enter button.png", 61, 24);
+		ImageIcon enterImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/enter button.png", 61, 24);
 		JLabel enterBtn = new JLabel(enterImage);
 		
 		enterBtn.setHorizontalAlignment(SwingConstants.CENTER);
@@ -64,7 +64,7 @@ public class UserSearch extends JFrame {
 		enterBtn.setBounds(392, 30, 61, 24);
 		panel.add(enterBtn);
 		
-		ImageIcon backImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/back.png", 40, 40);
+		ImageIcon backImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/back.png", 40, 40);
 		JLabel backBtn = new JLabel(backImage);
 		backBtn.addMouseListener(new MouseAdapter() {
 			@Override

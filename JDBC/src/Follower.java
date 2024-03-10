@@ -65,7 +65,7 @@ public class Follower extends JFrame{
 		appbar.setLayout(null);
 		panel.add(appbar);
 		
-		ImageIcon logo = ImageManager.GetImageUsingFileSystem("src/assets/logo.png", 50,50);
+		ImageIcon logo = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/logo.png", 50,50);
 		
 		JLabel Logo = new JLabel(logo);
 		Logo.addMouseListener(new MouseAdapter() {
@@ -98,7 +98,7 @@ public class Follower extends JFrame{
 		}
 		*/
 		
-		ImageIcon backImage = ImageManager.GetImageUsingFileSystem("src/assets/UI/back.png",50,50);
+		ImageIcon backImage = ImageManager.GetImageUsingFileSystem("JDBC/src/assets/UI/back.png",50,50);
 		JLabel backBtn = new JLabel(backImage);
 		backBtn.setBounds(12, 5, 50, 50);
 		backBtn.setBackground(new Color(255, 255,255));
